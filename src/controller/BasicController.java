@@ -2,6 +2,7 @@ package controller;
 
 import model.SimpleModel;
 import utils.ErrorCheckers;
+import view.BasicView;
 import view.SimpleView;
 
 import javax.imageio.ImageIO;
@@ -9,12 +10,18 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * A basic implementation of the {@link SimpleController} interface.
+ */
+
 public class BasicController implements SimpleController {
 
-    private SimpleModel model;
+    private final SimpleModel model;
+    private final SimpleView view;
 
-    public BasicController(SimpleModel model) {
+    public BasicController(SimpleModel model) throws IllegalArgumentException {
         this.model = model;
+        this.view = new BasicView(model);
     }
 
     @Override
@@ -25,7 +32,13 @@ public class BasicController implements SimpleController {
     }
 
     @Override
-    public void processImage() {
+    public void processImage() throws IllegalStateException {
         model.processImage();
+    }
+
+    @Override
+    public void outputImage(String filename) throws IllegalArgumentException, IllegalStateException, IOException {
+        ErrorCheckers.checkNull(filename, "null filename given");
+        view.outputImage(filename);
     }
 }

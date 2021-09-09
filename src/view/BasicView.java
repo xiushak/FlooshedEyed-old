@@ -7,18 +7,28 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * A basic implementation of the {@link SimpleView} interface.
+ */
+
 public class BasicView implements SimpleView {
 
-    public SimpleModel model;
+    private final SimpleModel model;
 
-
+    /**
+     * Creates a view with the given model
+     *
+     * @param model the model to be set
+     * @throws IllegalArgumentException if a null model is given
+     */
     public BasicView(SimpleModel model) throws IllegalArgumentException {
         ErrorCheckers.checkNull(model, "null model given");
         this.model = model;
     }
 
     @Override
-    public void outputImage(String filename) throws IOException {
+    public void outputImage(String filename) throws IllegalArgumentException, IOException {
+        ErrorCheckers.checkNull(filename, "null filename given");
         ImageIO.write(model.getImage(), "png", new File(filename));
     }
 }
