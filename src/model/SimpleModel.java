@@ -18,9 +18,11 @@ public interface SimpleModel {
     /**
      * Processes the image
      *
+     * @param x the x coordinate for the center of the fisheye effect
+     * @param y the y coordinate for the center of the fisheye effect
      * @throws IllegalStateException if no image has been set
      */
-    void processImage() throws IllegalStateException;
+    void processImage(int x, int y) throws IllegalStateException;
 
     /**
      * Gets the width of the image

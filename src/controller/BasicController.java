@@ -33,7 +33,7 @@ public class BasicController implements SimpleController {
 
     @Override
     public void processImage() throws IllegalStateException {
-        model.processImage();
+        model.processImage(model.getWidth() / 2, model.getHeight() / 2);
     }
 
     @Override

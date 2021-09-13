@@ -40,7 +40,7 @@ public class FishEyeModel implements SimpleModel {
      * implemntation that applies the filter in the center of the image
      */
     @Override
-    public void processImage() throws IllegalStateException {
+    public void processImage(int x, int y) throws IllegalStateException {
         checkImageSet();
         BufferedImage pbi = new BufferedImage(bi.getWidth(), bi.getHeight(),
                 BufferedImage.TYPE_INT_ARGB);
