@@ -1,6 +1,6 @@
 import controller.BasicController;
 import controller.SimpleController;
-import model.FishEyeModel;
+import model.EllipseFishEyeModel;
 import model.SimpleModel;
 import view.BasicView;
 import view.SimpleView;
@@ -10,12 +10,13 @@ import java.io.IOException;
 
 public class main {
     public static void main(String[] args) throws IOException {
-        SimpleModel model = new FishEyeModel();
+        SimpleModel model = new EllipseFishEyeModel();
+
         SimpleView view = new BasicView(model);
         SimpleController controller = new BasicController(model);
 
         controller.setImage(new File("grid.jpg"));
         controller.processImage();
-        view.outputImage("fisheyeGrid.png");
+        view.outputImage("ellipseFisheyeGrid.png");
     }
 }
