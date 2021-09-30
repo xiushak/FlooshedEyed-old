@@ -8,14 +8,6 @@ import java.awt.image.BufferedImage;
 
 public interface SimpleModel {
     /**
-     * Sets the image of the model
-     *
-     * @param bi the image to be used
-     * @throws IllegalArgumentException if a null image is given
-     */
-    void setImage(BufferedImage bi) throws IllegalArgumentException;
-
-    /**
      * Processes the image
      *
      * @param x the x coordinate for the center of the fisheye effect
@@ -48,5 +40,13 @@ public interface SimpleModel {
      * @throws IllegalStateException if no imgae has been set
      */
     BufferedImage getImage() throws IllegalStateException;
+
+    /**
+     * Sets the image of the model
+     *
+     * @param bi the image to be used
+     * @throws IllegalArgumentException if a null image is given
+     */
+    void setImage(BufferedImage bi) throws IllegalArgumentException;
 }
 
