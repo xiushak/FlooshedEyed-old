@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 
 public interface SimpleModel {
     /**
-     * Processes the image
+     * Processes the image by applying the fisheye filter
      *
      * @param x the x coordinate for the center of the fisheye effect
      * @param y the y coordinate for the center of the fisheye effect
