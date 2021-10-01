@@ -18,11 +18,20 @@ public interface SimpleController {
     void setImage(File file) throws IOException, IllegalArgumentException;
 
     /**
-     * Applys the fisheye effect on the image
+     * Applys the fisheye effect on the image on the center of the image
      *
      * @throws IllegalStateException if no image has been uploaded yet
      */
     void processImage() throws IllegalStateException;
+
+    /**
+     * Applys the fisheye effect on the image and lets you choose the location
+     *
+     * @param x the x coordinate to apply the fisheye
+     * @param y the y coordinate to apply the fisheye
+     * @throws IllegalStateException if no image has been uploaded yet
+     */
+    void processImage(int x, int y) throws IllegalStateException;
 
     /**
      * Exports the image with the given filename

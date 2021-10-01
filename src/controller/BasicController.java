@@ -37,6 +37,11 @@ public class BasicController implements SimpleController {
     }
 
     @Override
+    public void processImage(int x, int y) throws IllegalStateException {
+        model.processImage(x, y);
+    }
+
+    @Override
     public void outputImage(String filename) throws IllegalArgumentException, IllegalStateException, IOException {
         ErrorCheckers.checkNull(filename, "null filename given");
         view.outputImage(filename);
