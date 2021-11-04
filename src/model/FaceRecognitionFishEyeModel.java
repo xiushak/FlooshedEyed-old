@@ -35,7 +35,8 @@ public class FaceRecognitionFishEyeModel implements SimpleModel {
     }
 
     /**
-     * Automatically sets x y to a random face detected in the image so given x and y are ignored.
+     * Automatically sets x y to a random face detected in the image so given x and y are ignored. If no face is detected,
+     * applies the filter on the center of the image.
      */
     @Override
     public void processImage(int x, int y) throws IllegalStateException {
@@ -61,6 +62,10 @@ public class FaceRecognitionFishEyeModel implements SimpleModel {
         Rect[] rects = faceDetections.toArray();
         // choose a random face
         int rectCount = rects.length;
+        if (rects.length == 0) {
+            delegate.processImage(bi.getWidth() / 2, bi.getHeight() / 2);
+            return;
+        }
         Random r = new Random();
         int face = r.nextInt(rects.length);
         Rect rect = rects[face];
