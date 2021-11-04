@@ -29,6 +29,9 @@ public class BasicView implements SimpleView {
     @Override
     public void outputImage(String filename) throws IllegalArgumentException, IOException {
         ErrorCheckers.checkNull(filename, "null filename given");
-        ImageIO.write(model.getImage(), "png", new File(filename));
+        File outFile = new File(filename);
+        if (outFile.getParentFile() != null)
+            outFile.getParentFile().mkdirs();
+        ImageIO.write(model.getImage(), "png", outFile);
     }
 }
