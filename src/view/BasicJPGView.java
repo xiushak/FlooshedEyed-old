@@ -37,7 +37,7 @@ public class BasicJPGView implements SimpleView {
 
         // remove alpha channel for jpg
         BufferedImage originalImg = model.getImage();
-        BufferedImage newImage = new BufferedImage((int) originalImg.getWidth(), (int) originalImg.getHeight(), BufferedImage.TYPE_INT_RGB);
+        BufferedImage newImage = new BufferedImage(originalImg.getWidth(), originalImg.getHeight(), BufferedImage.TYPE_INT_RGB);
         newImage.createGraphics().drawImage(originalImg, 0, 0, Color.black, null);
 
         ImageIO.write(newImage, "jpg", outFile);
