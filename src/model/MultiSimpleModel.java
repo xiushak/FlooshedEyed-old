@@ -55,7 +55,6 @@ public interface MultiSimpleModel {
 
     /**
      * Gets the delegate in the model
-     *
      * @param index the index of the delegate to be returned
      * @return the delegate (Not a copy)
      * @throws IllegalArgumentException if an invalid index is given
