@@ -22,3 +22,7 @@ is an example using my face.
 
 ![alt_text](face.jpg?raw=true)
 ![alt text](faceFisheye.png?raw=true)
+
+I also have a version that fisheyes on the brain to create the "big brain" effect.
+
+![alt_text](faceFisheyeBrain.png?raw=true)

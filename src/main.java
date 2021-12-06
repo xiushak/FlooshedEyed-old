@@ -2,10 +2,7 @@ import controller.BasicController;
 import controller.MultiBasicController;
 import controller.MultiSimpleController;
 import controller.SimpleController;
-import model.EllipseFishEyeModel;
-import model.FaceRecognitionFishEyeModel;
-import model.FishEyeModel;
-import model.SimpleModel;
+import model.*;
 import view.BasicView;
 import view.SimpleView;
 
@@ -17,6 +14,7 @@ public class main {
         useEllipseModel();
         useFisheyeModel();
         useFaceRecognitionModel();
+        useFaceRecognitionBrainModel();
         useMultiModel();
     }
 
@@ -51,6 +49,17 @@ public class main {
         controller.processImage(model.getWidth() / 2, model.getHeight() / 2);
 
         view.outputImage("faceFisheye.png");
+    }
+
+    private static void useFaceRecognitionBrainModel() throws IOException {
+        SimpleModel model = new FaceRecognitionBigBrainModel();
+        SimpleView view = new BasicView(model);
+        SimpleController controller = new BasicController(model);
+
+        controller.setImage(new File("face.jpg"));
+        controller.processImage(model.getWidth() / 2, model.getHeight() / 2);
+
+        view.outputImage("faceFisheyeBrain.png");
     }
 
     private static void useMultiModel() throws IOException {
