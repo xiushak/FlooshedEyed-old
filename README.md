@@ -1,5 +1,7 @@
 # FlooshedEyed
 
+# OLD VERSION
+
 A program to apply the fisheye effect on images. There is currently 3 versions of the effect.
 
 ![alt text](grid.jpg?raw=true)
